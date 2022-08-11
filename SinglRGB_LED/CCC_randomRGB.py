@@ -10,7 +10,7 @@ lineR.freq(1000)
 lineG = PWM(Pin(3))
 lineG.freq(1500)
 lineB = PWM(Pin(4))
-lineG.freq(2000)
+lineB.freq(2000)
 
 led25 = Pin(25, Pin.OUT)
 while True:
