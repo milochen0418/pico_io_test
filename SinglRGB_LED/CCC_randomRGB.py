@@ -16,7 +16,7 @@ led25 = Pin(25, Pin.OUT)
 while True:
     led25.toggle()
     v = 65536
-    dutyR = random.randint(0,v)
+    dutyR = random.randint(0,int(v/2))
     dutyG = random.randint(0,v)
     dutyB = random.randint(0,v)
     lineR.duty_u16(dutyR)
