@@ -11,6 +11,7 @@ from time import sleep
 # L298N.Regulator Enable Jumper connected. Use >6V power on 12V 
 # When L298N.Regulator Enable Jumper is connected, you can give 5V to outside  
 
+# Running Result is here https://www.youtube.com/watch?v=kq-ivzDuK7c
 
 in1 = Pin(15, Pin.OUT)
 in2 = Pin(14, Pin.OUT)
