@@ -1,7 +1,14 @@
 from machine import Pin, PWM
 from time import sleep
 
-
+# Hardward Connection Description 
+# PICO.GP15 <-> L298N.IN1
+# PICO.GP14 <-> L298N.IN2
+# L298N.12V <-> Power supply or PICO.VBUS
+# L298N.ENA jumper connected
+# L298N.ENB jumper connected
+# L298N.Regulator Enable Jumper connected. Use >6V power on 12V 
+# When L298N.Regulator Enable Jumper is connected, you can give 5V to outside  
 in1 = Pin(15, Pin.OUT)
 in1.value(0)
 in2 = Pin(14, Pin.OUT)
