@@ -25,29 +25,28 @@ delay_sec = 2
 # I need to give 5V to L298N with Brushed DC motor type B, 
 # then the Brushed DC motor can be runned by this code.
 
-A = [0, 10000,15000,20000,25000,30000,35000,40000, 45000, 50000,55000, 60000, 65000,
-     60000, 55000,50000,45000,40000,35000,30000,25000,20000,15000,10000]
-duty = A[6]
-ena_pwm.duty_u16(duty)
+A = [20000,25000,30000,35000,40000, 45000, 50000,55000, 60000, 65000,
+     60000, 55000,50000,45000,40000,35000,30000,25000]
+#duty = A[6]
+#ena_pwm.duty_u16(duty)
 
 while True:
-    led25.toggle()
-    in1.value(0)
-    in2.value(1)
-    sleep(delay_sec)
-    led25.toggle()    
-    in1.value(0)
-    in2.value(0)
-    sleep(delay_sec)
-    led25.toggle()    
-    in1.value(1)
-    in2.value(0)
-    sleep(delay_sec)
-    led25.toggle()    
-    in1.value(1)
-    in2.value(1)
-    sleep(delay_sec)
-        
-
-
-
+    for duty in A:
+        print("duty = "+str(duty))
+        ena_pwm.duty_u16(duty)
+        led25.toggle()
+        in1.value(0)
+        in2.value(1)
+        sleep(2*delay_sec)
+        led25.toggle()    
+        in1.value(0)
+        in2.value(0)
+        sleep(delay_sec)
+        led25.toggle()    
+        in1.value(1)
+        in2.value(0)
+        sleep(2*delay_sec)
+        led25.toggle()    
+        in1.value(1)
+        in2.value(1)
+        sleep(delay_sec)
