@@ -33,42 +33,10 @@ led25 = Pin(25, Pin.OUT)
 print("Programming start")
 delay_sec = 0.2
 #A = [40000, 60000]
-#A = [20000,25000,30000,35000,40000, 45000, 50000,55000, 60000, 65000,
-#     60000, 55000,50000,45000,40000,35000,30000,25000]
-A = [45000,45000]
-#duty = A[6]
-#ena_pwm.duty_u16(duty)
-exit_flag = 0
-while True:
-    
-    for duty in A:
-        print("duty = "+str(duty))
-        ena_pwm.duty_u16(duty)
-        led25.toggle()
-        in1.value(0)
-        in2.value(1)
-        sleep(2*delay_sec)
-        led25.toggle()    
-        in1.value(0)
-        in2.value(0)
-        sleep(delay_sec)
-        led25.toggle()    
-        in1.value(1)
-        in2.value(0)
-        sleep(2*delay_sec)
-        if(duty==45000):
-            exit_flag = 1
-            break
 
-        led25.toggle()    
-        in1.value(1)
-        in2.value(1)
-        sleep(delay_sec)
-    if exit_flag == 1:
-        break
-print("Left control")
-while True:
-    sleep(5)
-    led25.toggle()
-        
+ena_pwm.duty_u16(66000)
+in1.value(1)
+in2.value(0)
+
+
 print("END")
